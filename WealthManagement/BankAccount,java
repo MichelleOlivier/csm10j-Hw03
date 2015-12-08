@@ -1,0 +1,50 @@
+
+package hw03;
+import java.text.DecimalFormat;
+/**
+ *
+ * @author Michelle
+ */
+public class BankAccount extends Asset implements GetName
+{
+    String name;
+    double _balance;
+    
+    public BankAccount()
+    {
+        
+    }
+        
+    public BankAccount(String _name, double balance)
+    {
+        name = _name;
+        _balance = balance;
+    }
+       
+    public String getName()
+    {
+        return name;
+    }
+    
+    public Double getDebtAmount()
+    {
+        return 0.00;
+    }
+    
+    public Double getAssetValue()
+    {
+        return _balance;
+    }
+    
+    public Double getNetValue()
+    {
+        return _balance;
+    }
+    
+    @Override
+    public String toString()
+    {
+        DecimalFormat df = new DecimalFormat("#.00");
+        return String.format("%1s, Bank Account, Balance: $%2s", name, df.format(_balance));
+    }
+}
